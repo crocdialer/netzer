@@ -1,0 +1,15 @@
+include_directories(${crocore_INCLUDE_DIRS})
+set(LIBS ${LIBS} crocore)
+
+FILE(GLOB TEST_SOURCES "*.c*")
+FILE(GLOB TEST_HEADERS "*.h")
+
+SOURCE_GROUP("Unit-Tests" FILES ${TEST_SOURCES} ${TEST_HEADERS})
+FOREACH (testFile ${TEST_SOURCES})
+    STRING(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/" "" testName ${testFile})
+    STRING(REPLACE ".cpp" "" testName ${testName})
+    add_executable(${testName} ${testFile} ${TEST_HEADERS})
+    TARGET_LINK_LIBRARIES(${testName} ${LIBS})
+    add_test(${testName} ${CMAKE_CURRENT_BINARY_DIR}/${testName})
+    #    message(STATUS "found unit-test: ${testName} (${CMAKE_CURRENT_BINARY_DIR}/${testName})")
+ENDFOREACH(testFile)
