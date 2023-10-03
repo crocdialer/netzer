@@ -13,7 +13,7 @@
 #include <functional>
 #include <memory>
 
-namespace crocore::net::http
+namespace netzer::http
 {
     
 struct connection_info_t

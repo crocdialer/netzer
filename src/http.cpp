@@ -6,7 +6,7 @@
 
 using duration_t = std::chrono::duration<double>;
 
-namespace crocore::net::http
+namespace netzer::http
 {
 
 using ActionPtr = std::shared_ptr<class CurlAction>;
