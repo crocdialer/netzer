@@ -12,7 +12,7 @@ namespace crocore{ using io_service_t = boost::asio::io_context; }
 namespace crocore::net
 {
 
-NETZER_DEFINE_CLASS_PTR(Serial);
+NETZER_DEFINE_CLASS_PTR(Serial)
 
 class Serial : public crocore::net::Connection, public std::enable_shared_from_this<Serial>
 {

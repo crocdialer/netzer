@@ -19,7 +19,7 @@
 namespace crocore::net
 {
 
-NETZER_DEFINE_CLASS_PTR(Connection);
+NETZER_DEFINE_CLASS_PTR(Connection)
 
 //! Connection interface
 class Connection
