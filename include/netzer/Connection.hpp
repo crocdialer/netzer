@@ -16,7 +16,7 @@
 
 #include "define_class_ptr.hpp"
 
-namespace crocore::net
+namespace netzer
 {
 
 NETZER_DEFINE_CLASS_PTR(Connection)
@@ -91,4 +91,4 @@ public:
     }
 };
 
-}// namespace crocore
+}// namespace netzer

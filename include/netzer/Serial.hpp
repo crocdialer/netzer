@@ -9,17 +9,17 @@
 namespace boost::asio{ class io_context; }
 namespace crocore{ using io_service_t = boost::asio::io_context; }
 
-namespace crocore::net
+namespace netzer
 {
 
 NETZER_DEFINE_CLASS_PTR(Serial)
 
-class Serial : public crocore::net::Connection, public std::enable_shared_from_this<Serial>
+class Serial : public netzer::Connection, public std::enable_shared_from_this<Serial>
 {
 
 public:
 
-    static SerialPtr create(io_service_t &io, receive_cb_t cb = {});
+    static SerialPtr create(crocore::io_service_t &io, receive_cb_t cb = {});
 
     virtual ~Serial();
 
@@ -58,7 +58,7 @@ private:
 
     void async_write_bytes(const void *buffer, size_t sz);
 
-    Serial(io_service_t &io, receive_cb_t cb);
+    Serial(crocore::io_service_t &io, receive_cb_t cb);
 
     std::shared_ptr<struct SerialImpl> m_impl;
 };
