@@ -17,9 +17,9 @@
 
 // forward declare boost io_service
 namespace boost::asio{ class io_context; }
-namespace crocore{ using io_service_t = boost::asio::io_context; }
+namespace netzer{ using io_service_t = boost::asio::io_context; }
 
-namespace crocore::net
+namespace netzer
 {
 
 extern char const *const UNKNOWN_IP;
@@ -126,7 +126,7 @@ private:
     std::unique_ptr<struct tcp_server_impl> m_impl;
 };
 
-class tcp_connection final : public crocore::net::Connection, public std::enable_shared_from_this<tcp_connection>
+class tcp_connection final : public netzer::Connection, public std::enable_shared_from_this<tcp_connection>
 {
 public:
 

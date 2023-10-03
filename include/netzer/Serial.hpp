@@ -7,7 +7,7 @@
 
 // forward declare boost io_service
 namespace boost::asio{ class io_context; }
-namespace crocore{ using io_service_t = boost::asio::io_context; }
+namespace netzer{ using io_service_t = boost::asio::io_context; }
 
 namespace netzer
 {
@@ -19,7 +19,7 @@ class Serial : public netzer::Connection, public std::enable_shared_from_this<Se
 
 public:
 
-    static SerialPtr create(crocore::io_service_t &io, receive_cb_t cb = {});
+    static SerialPtr create(io_service_t &io, receive_cb_t cb = {});
 
     virtual ~Serial();
 
@@ -58,7 +58,7 @@ private:
 
     void async_write_bytes(const void *buffer, size_t sz);
 
-    Serial(crocore::io_service_t &io, receive_cb_t cb);
+    Serial(io_service_t &io, receive_cb_t cb);
 
     std::shared_ptr<struct SerialImpl> m_impl;
 };

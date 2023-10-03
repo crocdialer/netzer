@@ -10,7 +10,7 @@
 
 #endif
 
-namespace crocore::net
+namespace netzer
 {
 
 using namespace boost::asio::ip;

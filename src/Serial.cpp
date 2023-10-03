@@ -29,7 +29,7 @@ struct SerialImpl
 
 ///////////////////////////////////////////////////////////////////////////////
 
-SerialPtr Serial::create(crocore::io_service_t &io, receive_cb_t cb)
+SerialPtr Serial::create(io_service_t &io, receive_cb_t cb)
 {
     auto ret = SerialPtr(new Serial(io, std::move(cb)));
     return ret;
@@ -37,7 +37,7 @@ SerialPtr Serial::create(crocore::io_service_t &io, receive_cb_t cb)
 
 ///////////////////////////////////////////////////////////////////////////////
 
-Serial::Serial(crocore::io_service_t &io, receive_cb_t cb) :
+Serial::Serial(io_service_t &io, receive_cb_t cb) :
         m_impl(new SerialImpl(io, std::move(cb)))
 {
 
