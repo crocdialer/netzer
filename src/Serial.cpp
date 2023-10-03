@@ -9,7 +9,7 @@ namespace
 {
 std::mutex g_mutex;
 std::map<std::string, SerialWeakPtr> g_connected_devices;
-};
+}
 
 struct SerialImpl
 {
