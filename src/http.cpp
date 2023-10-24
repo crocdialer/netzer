@@ -112,7 +112,7 @@ public:
         curl_easy_setopt(handle(), CURLOPT_READFUNCTION, read_static);
         curl_easy_setopt(handle(), CURLOPT_NOPROGRESS, 0L);
         curl_easy_setopt(handle(), CURLOPT_PROGRESSDATA, this);
-        curl_easy_setopt(handle(), CURLOPT_PROGRESSFUNCTION, progress_static);
+        curl_easy_setopt(handle(), CURLOPT_XFERINFOFUNCTION, progress_static);
         curl_easy_setopt(handle(), CURLOPT_URL, the_url.c_str());
     };
 
@@ -220,7 +220,7 @@ public:
         curl_easy_setopt(handle(), CURLOPT_UPLOAD, 1L);
 
         /* HTTP PUT please */
-        curl_easy_setopt(handle(), CURLOPT_PUT, 1L);
+        curl_easy_setopt(handle(), CURLOPT_UPLOAD, 1L);
         curl_easy_setopt(handle(), CURLOPT_INFILESIZE_LARGE, static_cast<curl_off_t>(m_data.size()));
         curl_easy_setopt(handle(), CURLOPT_HTTPHEADER, m_headers.get());
     }
