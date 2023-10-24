@@ -1,4 +1,5 @@
 #include <mutex>
+#include <utility>
 #include <boost/asio.hpp>
 #include <boost/asio/serial_port.hpp>
 #include "netzer/Serial.hpp"
