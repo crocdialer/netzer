@@ -94,14 +94,14 @@ std::map<std::string, SerialPtr> Serial::connected_devices()
 bool Serial::open()
 {
     bool ret = false;
-    for(const auto &d: device_list())
-    {
-        if(open(d))
-        {
-            ret = true;
-            break;
-        }
-    }
+    //for(const auto &d: device_list())
+    //{
+    //    if(open(d))
+    //    {
+    //        ret = true;
+    //        break;
+    //    }
+    //}
     return ret;
 }
 
